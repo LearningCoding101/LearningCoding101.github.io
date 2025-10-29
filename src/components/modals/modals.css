@@ -1,0 +1,127 @@
+/* Shared modal styles (small, mobile-first) */
+.success-sheet, .failed-sheet {
+	align-items: center;
+	text-align: center;
+}
+
+.success-circle, .failed-circle {
+	width: 140px;
+	height: 140px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.success-circle {
+	/* the provided PNG is already a circular asset; don't draw a separate background */
+	background: transparent;
+	box-shadow: none;
+}
+.success-check {
+	width: 140px; /* match wrapper so the PNG shows at native display size */
+	height: 140px;
+	object-fit: contain;
+	display: block;
+}
+
+.failed-circle {
+	/* the failure PNG is already a circular asset; don't draw a separate background */
+	background: transparent;
+	box-shadow: none;
+}
+.failed-x {
+	width: 140px;
+	height: 140px;
+	object-fit: contain;
+	display: block;
+}
+
+.success-title {
+	font-family: '1FTV VIP Hello Roti', 'Arial', sans-serif;
+	color: #FFD456;
+	font-size: 36px;
+	margin-top: 14px;
+	font-weight: 800;
+	letter-spacing: 1px;
+}
+
+.success-sub {
+	color: #F37327;
+	margin-top: 8px;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.success-total-label, .failed-total-label {
+	margin-top: 10px;
+	color: #F37327;
+	font-weight: 700;
+}
+
+.success-total, .failed-total {
+	font-size: 64px;
+	color: #F37327;
+	font-weight: 900;
+	margin-top: 8px;
+	line-height: 1;
+}
+
+.failed-title {
+	font-family: '1FTV VIP Hello Roti', 'Arial', sans-serif;
+	color: #F04C4C;
+	font-size: 28px;
+	margin-top: 8px;
+	font-weight: 700;
+}
+
+.failed-sub {
+	color: #8C8C8C;
+	margin-top: 6px;
+}
+
+.success-button, .failed-button {
+	margin-top: 18px;
+	width: 200px;
+	height: 44px;
+	border-radius: 999px;
+	border: none;
+	color: #fff;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.success-button {
+	background: #31C46A;
+}
+
+.failed-button {
+	background: #F37327;
+}
+
+/* small adjustments so sheet padding fits new layout */
+.gameplay-sheet.success-sheet, .gameplay-sheet.failed-sheet {
+	padding-top: 24px;
+	padding-bottom: 40px;
+}
+
+/* Emphasize rounded top like the screenshot */
+.gameplay-sheet {
+	border-top-left-radius: 28px;
+	border-top-right-radius: 28px;
+}
+
+/* closing animation to mirror the sheet fade-out */
+.gameplay-sheet.closing {
+	animation: gameplayFadeOut 260ms ease forwards;
+}
+
+@keyframes gameplayFadeOut {
+	from {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	to {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+}

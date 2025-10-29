@@ -1,0 +1,122 @@
+/* Styles for ReadAndChooseModal to align with Figma visual language */
+.read-choose-root .gameplay-sheet {
+  max-width: 720px;
+  /* make the sheet responsive and nearly full-bleed with small side padding */
+  width: calc(100% - 48px);
+  margin: 0 auto;
+  padding: 28px 24px;
+  box-sizing: border-box;
+}
+
+.read-choose-title {
+  color: #ff7a00;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.read-choose-logo {
+  width: 96px;
+  height: auto;
+  display: inline-block;
+}
+
+.read-choose-prompt {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #404040;
+  white-space: pre-wrap;
+}
+
+.read-choose-question {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #404040;
+}
+
+.read-choose-choices {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+}
+
+.read-choose-choice {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 16px 20px;
+  /* rounder corners to match requested design */
+  border-radius: 24px;
+  border: 1px solid #eee;
+  background: #f7f7f7;
+  color: #404040;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+  transition: background 150ms ease, color 150ms ease, transform 80ms ease;
+}
+
+.read-choose-choice:hover:not(.disabled) {
+  transform: translateY(-2px);
+}
+
+.read-choose-choice.selected {
+  background: #ff7a00;
+  color: white;
+  border: 1px solid #ff7a00;
+}
+
+.read-choose-choice.correct {
+  background: #ff7a00;
+  color: white;
+  border: 1px solid #ff7a00;
+}
+
+.read-choose-choice.wrong {
+  background: #e04a3f;
+  color: white;
+  border: 1px solid #e04a3f;
+}
+
+.read-choose-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.read-choose-confirm {
+  padding: 10px 20px;
+  border-radius: 28px;
+  border: none;
+  background: #ffd24d;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.read-choose-confirm.disabled {
+  background: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.read-choose-reset,
+.read-choose-close {
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+/* small responsive tweaks */
+@media (max-width: 480px) {
+  .read-choose-root .gameplay-sheet {
+    padding: 20px 16px;
+  }
+  .read-choose-choice {
+    padding: 18px 18px;
+    font-size: 16px;
+  }
+}

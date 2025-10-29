@@ -1,0 +1,485 @@
+.home-page {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-width: 393px;
+  margin: 0 auto;
+  background-color: #F37327;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.background-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  transition: all 0.4s ease-in-out;
+}
+
+.radial-blur {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160%;
+  height: auto;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.glow-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  background: #FFFAF6;
+  border-radius: 50%;
+  filter: blur(157.7px);
+  opacity: 0.85;
+  pointer-events: none;
+  animation: glow-blink 3s ease-in-out infinite;
+}
+
+@keyframes glow-blink {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.header-content {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+.logo {
+  width: 75px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.welcome-text {
+  font-family: '1FTV VIP Hello Roti', 'Arial', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 0.9em;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.subtitle-text {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4em;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0;
+  z-index: 3;
+  width: 85%;
+  max-width: 280px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+.main-illustration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 2;
+  transition: all 0.4s ease-in-out;
+}
+
+.dragon-text-image {
+  width: 85%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+  transition: all 0.4s ease-in-out;
+}
+
+.start-button {
+  position: absolute;
+  bottom: 16%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 149px;
+  height: 41px;
+  background: #4FC6E0;
+  border: none;
+  border-radius: 159.4px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: #FFFFFF;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  min-height: 44px;
+}
+
+.start-button:hover {
+  background: #3db5cf;
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.3);
+}
+
+.start-button:active {
+  transform: translateX(-50%) translateY(0);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-decoration {
+  position: fixed;
+  bottom: -10%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 5;
+  margin: 0;
+  padding: 0;
+}
+
+.background-pattern {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150%;
+  min-width: 150%;
+  height: auto;
+  object-fit: cover;
+  object-position: bottom center;
+  pointer-events: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .hero-container {
+    max-width: 100%;
+  }
+  
+  .background-pattern {
+    width: 120%;
+    min-width: 120%;
+  }
+  
+  .radial-blur {
+    width: 140%;
+  }
+  
+  .dragon-text-image {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .welcome-text {
+    font-size: 32px;
+  }
+  
+  .subtitle-text {
+    font-size: 22px;
+  }
+  
+  .start-button {
+    width: 169px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .background-pattern {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+.home-page.bottom-sheet-open .header-content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.home-page.bottom-sheet-open .subtitle-text {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.home-page.bottom-sheet-open .start-button {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.home-page.bottom-sheet-open .main-illustration {
+  top: 50px;
+  transform: translate(-50%, 0) scale(0.50);
+  transform-origin: center top;
+}
+
+.home-page.bottom-sheet-open .background-effects {
+  top: -40%;
+  transform: scale(0.6);
+}
+
+.home-page.bottom-sheet-open .bottom-decoration {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* when gameplay modal is open, move dragon left and hide radial blur */
+.home-page.game-modal-open .dragon-text-image {
+  transform: none;
+  max-width: 175px; /* roughly 50% smaller than 350 */
+  width: auto;
+}
+
+/* when the bottom sheet is open and team2 is selected, make the dragon 50% bigger */
+.home-page.team2-selected .dragon-text-image {
+  transform: translate(-50%, -50%) scale(1.25);
+  max-width: 525px; /* 350 * 1.5 */
+}
+
+.home-page.game-modal-open .main-illustration {
+  top: 20px;
+  left: 18px;
+  transform: none;
+  width: auto;
+}
+
+.home-page.game-modal-open .radial-blur {
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+}
+
+.turn-indicator {
+  position: absolute;
+  top: 56px;
+  right: 18px;
+  text-align: right;
+  z-index: 12;
+  color: #FFFFFF;
+}
+
+.turn-indicator .turn-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.turn-indicator .turn-team {
+  font-family: '1FTV VIP Hello Roti', 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* hide header (logo, welcome text) and subtitle and start button when gameplay modal open */
+.home-page.game-modal-open .header-content,
+.home-page.game-modal-open .subtitle-text,
+.home-page.game-modal-open .start-button {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* When a feedback modal (success/failure) is visible, hide the turn indicator
+   even if the modal overlay is transparent. This avoids the text showing
+   through the transparent overlay area. */
+.home-page.feedback-open .turn-indicator {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------
+   GLOBAL MODAL: Force modals to take 75% of viewport height and keep
+   their content anchored at the top (content scrolls inside the modal)
+   This targets common modal selectors used across projects; adjust
+   selectors if your app uses differently named modal classes.
+   ------------------------------------------------------------------ */
+:root {
+  --global-modal-height: 75vh;
+}
+
+/* Containers that act as modals/dialogs */
+[role="dialog"],
+.modal,
+.modal-container,
+.dialog,
+.dialog__content,
+.modal-content,
+.modal__content,
+.challenge-modal,
+.gameplay-modal,
+.bottom-sheet,
+.bottom-sheet__sheet,
+.bottom-sheet__content,
+.sheet,
+.sheet-container,
+.bs-modal {
+  /* Force size */
+  height: var(--global-modal-height) !important;
+  max-height: var(--global-modal-height) !important;
+  min-height: var(--global-modal-height) !important;
+
+  /* Use flex column so children stack top-to-bottom and don't sink */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important; /* anchor content at top */
+  align-items: stretch !important;
+
+  /* Keep overall overflow hidden; inner content should scroll */
+  overflow: hidden !important;
+
+  /* If modals were positioned from bottom, ensure they remain visually
+     anchored at bottom while having the specified height. These rules
+     try to avoid breaking existing positioning but can be adjusted. */
+  top: auto !important;
+  bottom: 0 !important;
+}
+
+/* Inner content area should be scrollable and start at the top */
+[role="dialog"] > .content,
+.modal > .content,
+.modal .content,
+.modal-content,
+.modal__content,
+.bottom-sheet__content,
+.dialog__content,
+.challenge-modal .content,
+.gameplay-modal .content,
+.sheet > .content,
+.sheet-container > .content {
+  overflow-y: auto !important; /* allow internal scrolling */
+  -webkit-overflow-scrolling: touch !important;
+  flex: 1 1 auto !important; /* take available vertical space */
+  display: block !important;
+}
+
+/* Ensure immediate children of modal are laid out from the top */
+[role="dialog"] > *,
+.modal > *,
+.bottom-sheet__sheet > *,
+.gameplay-modal > *,
+.challenge-modal > * {
+  align-self: stretch !important;
+}
+
+/* Small visual padding so content does not stick to the very top */
+.modal .content > :first-child,
+.bottom-sheet__content > :first-child,
+.gameplay-modal .content > :first-child {
+  margin-top: 0 !important;
+  padding-top: 8px !important;
+}
+
+/* If some modals use fixed headers inside, keep them visible and allow
+   the rest of the body to scroll beneath */
+.modal .modal-body,
+.dialog__body,
+.bottom-sheet__body {
+  flex: 1 1 auto !important;
+  overflow-y: auto !important;
+}
+
+/* ------------------------------------------------------------------
+   SPECIFIC FIX: Gameplay modal
+   The gameplay modal uses .gameplay-overlay (container) and
+   .gameplay-sheet (the visible card). Ensure the sheet takes 75vh,
+   keeps its internal content anchored to the top, and remains
+   horizontally centered like before.
+   ------------------------------------------------------------------ */
+.gameplay-overlay {
+  /* keep overlay behavior but ensure centering horizontally */
+  position: fixed;
+  inset: 0;
+  display: flex !important;
+  align-items: flex-end !important; /* keep sheet anchored to bottom */
+  justify-content: center !important;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.0);
+  pointer-events: auto;
+}
+
+.gameplay-overlay .gameplay-sheet {
+  /* Force the visible sheet to occupy 75% of the viewport height */
+  height: var(--global-modal-height) !important;
+  max-height: var(--global-modal-height) !important;
+  min-height: var(--global-modal-height) !important;
+
+  /* Keep original sizing constraints and centered layout */
+  width: 100% !important;
+  max-width: 393px !important;
+  margin: 0 auto 40px !important;
+  border-radius: 24px !important;
+  padding: 36px 32px !important;
+
+  /* layout: stack children from the top and keep them centered horizontally */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important; /* pin content to top */
+  align-items: center !important; /* keep horizontal centering */
+
+  /* allow internal scrolling when content overflows */
+  overflow: hidden !important;
+}
+
+/* Make the body inside the sheet scrollable while keeping header/buttons
+   at the top if layout splits them. Here we make the sheet itself scroll
+   its contents so content remains visually anchored to the top. */
+.gameplay-overlay .gameplay-sheet {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+

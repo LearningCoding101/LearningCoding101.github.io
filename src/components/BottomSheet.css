@@ -1,0 +1,230 @@
+.team-name-greyed {
+  color: #aaa;
+  font-style: italic;
+  opacity: 0.7;
+}
+.bottom-sheet-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.bottom-sheet-overlay.open {
+  pointer-events: auto;
+}
+
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 100%;
+  max-width: 393px;
+  height: 686px;
+  background: #FFFFFF;
+  border-radius: 40px 40px 0 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  z-index: 101;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-sheet.open {
+  transform: translateX(-50%) translateY(0);
+}
+
+.bottom-sheet.fading-out,
+.bottom-sheet-overlay.fading-out {
+  transition: opacity 0.32s ease, transform 0.32s ease;
+  opacity: 0;
+  transform: translateX(-50%) translateY(8%);
+  pointer-events: none;
+}
+
+.bottom-sheet-content {
+  padding: 62px 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.bottom-sheet-title {
+  font-family: '1FTV VIP Hello Roti', 'Arial', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 0.872em;
+  letter-spacing: -0.03em;
+  color: #F37327;
+  text-align: left;
+  margin: 0 0 60px 0;
+  width: 100%;
+  text-transform: lowercase;
+}
+
+.team-inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 273px;
+  margin-bottom: 40px;
+}
+
+.team-input-wrapper {
+  width: 100%;
+}
+
+.team-name-input {
+  flex: 1;
+  height: 100%;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #8C8C8C;
+  text-align: center;
+  outline: none;
+  min-width: 0;
+}
+
+.team-name-input::placeholder {
+  color: #8C8C8C;
+}
+
+.team-name-input:focus {
+  outline: none;
+}
+
+.team-button {
+  width: 100%;
+  height: 41px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 24px;
+  gap: 8px;
+  background: #F2F2F7 !important;
+  border: 4px solid transparent;
+  border-radius: 159.4px;
+  box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 41px;
+  position: relative;
+}
+
+.team-button.active {
+  background: #F2F2F7 !important;
+  border: 4px solid #FFD456;
+  padding: 0 24px;
+}
+
+.team-button:hover {
+  background: #F2F2F7 !important;
+  transform: translateY(-1px);
+  box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.team-button:active {
+  background: #F2F2F7 !important;
+  transform: translateY(0);
+}
+
+.team-button:focus {
+  background: #F2F2F7 !important;
+  outline: none;
+}
+
+.team-label {
+  font-family: '1FTV VIP Hello Roti', 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 0.872em;
+  letter-spacing: -0.03em;
+  color: #FFD456;
+  text-transform: lowercase;
+  flex-shrink: 0;
+}
+
+.team-name-display {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: #8C8C8C;
+  text-align: center;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-name-placeholder {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: #8C8C8C;
+  text-align: center;
+  flex: 1;
+}
+
+.start-game-button {
+  width: 149px;
+  height: 41px;
+  background: #4FC6E0;
+  border: none;
+  border-radius: 159.4px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: #FFFFFF;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  min-height: 41px;
+}
+
+.start-game-button:hover {
+  background: #3db5cf;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.3);
+}
+
+.start-game-button:active {
+  transform: translateY(0);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 393px) {
+  .bottom-sheet {
+    max-width: 100%;
+  }
+  
+  .bottom-sheet-content {
+    padding: 62px 40px 0;
+  }
+  
+  .team-inputs-container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  .bottom-sheet {
+    max-width: 100%;
+  }
+}

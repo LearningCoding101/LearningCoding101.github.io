@@ -1,0 +1,11 @@
+export { default as ReadAndChooseModal } from "./ReadAndChooseModal";
+export { default as ReadAndChooseAnswerWithImageModal } from "./ReadAndChooseAnswerWithImageModal";
+export { default as PickRightAnswerWithPicturesModal } from "./PickRightAnswerWithPicturesModal";
+export { default as WatchVideoAndChooseRightAnswerModal } from "./WatchVideoAndChooseRightAnswerModal";
+export { default as ListenToSoundPickRightAnswerModal } from "./ListenToSoundPickRightAnswerModal";
+export { default as MemorizeInLimitedTimeAndChooseAnswerModal } from "./MemorizeInLimitedTimeAndChooseAnswerModal";
+export { default as TypeInAnswerModal } from "./TypeInAnswerModal";
+export { default as DoTheChallengeModal } from "./DoTheChallengeModal";
+export { default as MatchPairsModal } from "./MatchPairsModal";
+export { default as SuccessModal } from "./SuccessModal";
+export { default as FailedModal } from "./FailedModal";
