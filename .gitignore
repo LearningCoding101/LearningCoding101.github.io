@@ -28,3 +28,4 @@ mcp.json
 dev-dist
 sw.js
 workbox-*.js
+.vscode/mcp.json

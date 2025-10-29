@@ -31,6 +31,10 @@ export default defineConfig({
         ],
       },
       workbox: {
+        // Increase the default maximum size for assets that will be precached by
+        // Workbox. The default is 2 MiB which caused the build error for a
+        // ~2.52 MB image. Set to 5 MiB to allow larger assets to be precached.
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         globPatterns: ["**/*.{js,css,html,ico,png,svg,woff,woff2}"],
         runtimeCaching: [
           {
