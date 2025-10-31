@@ -15,10 +15,17 @@
 
 .gameplay-sheet {
   width: 100%;
-  max-width: 393px;
-  margin: 0 auto 40px;
+  max-width: 100%;
+  margin: 0;
+  /* Make the sheet occupy the configured modal height so it reaches the bottom edge */
+  height: var(--global-modal-height);
+  max-height: var(--global-modal-height);
+  min-height: var(--global-modal-height);
   background: #ffffff;
-  border-radius: 24px;
+  /* only round the top corners so the sheet sits flush at the bottom */
+  border-radius: 24px 24px 0 0;
+  /* clip children so rounded corners remain visible while scrolling */
+  overflow: hidden;
   padding: 36px 32px;
   display: flex;
   flex-direction: column;
@@ -28,6 +35,12 @@
   transform: translateY(20px);
   opacity: 0;
   animation: gameplayFadeIn 360ms ease forwards;
+}
+
+.gameplay-sheet {
+  /* enable internal scrolling while outer sheet clips to border-radius */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 @keyframes gameplayFadeIn {

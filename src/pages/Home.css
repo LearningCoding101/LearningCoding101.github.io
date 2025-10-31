@@ -8,8 +8,8 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  max-width: 393px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   background-color: #F37327;
   display: flex;
   flex-direction: column;
@@ -459,9 +459,11 @@
 
   /* Keep original sizing constraints and centered layout */
   width: 100% !important;
-  max-width: 393px !important;
-  margin: 0 auto 40px !important;
+  max-width: 100% !important;
+  margin: 0 !important;
   border-radius: 24px !important;
+  /* only round top corners to avoid showing background at bottom corners */
+  border-radius: 24px 24px 0 0 !important;
   padding: 36px 32px !important;
 
   /* layout: stack children from the top and keep them centered horizontally */

@@ -6,6 +6,8 @@
   margin: 0 auto;
   padding: 28px 24px;
   box-sizing: border-box;
+  /* ensure sheet only rounds top corners so bottom is flush with viewport */
+  border-radius: 24px 24px 0 0;
 }
 
 .read-choose-title {

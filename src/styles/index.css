@@ -20,6 +20,40 @@
   --border-radius-lg: 12px;
 }
 
+/* Local Poppins (FZ Poppins) font faces - mapped to 'Poppins' so existing
+   styles using 'Poppins' pick them up. Vite will rewrite the URLs during
+   build; setting base './' in vite.config.js makes the built assets resolve
+   correctly on GitHub Pages. */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/font/FzPoppins/FZ Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/font/FzPoppins/FZ Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/font/FzPoppins/FZ Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/font/FzPoppins/FZ Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text-color: rgba(255, 255, 255, 0.87);
