@@ -54,6 +54,7 @@
   color: #F37327;
   font-family: '1FTV VIP Hello Roti', 'Arial', sans-serif;
   font-size: 22px;
+  font-weight: normal;
   margin: 0 0 8px;
   text-align: center;
 }
@@ -61,12 +62,14 @@
 .gameplay-input-pill {
   width: 230px;
   height: 48px;
-  background: #FFF7E6;
+  background: #FFFAF6;
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  border: 4px solid #FFD456;
+
 }
 
 .gameplay-number-input {
@@ -76,35 +79,37 @@
   font-size: 20px;
   width: 80px;
   outline: none;
-  color: #222; /* ensure visible text color */
+  color: grey; /* ensure visible text color */
 }
 
 .gameplay-number-input::placeholder { color: #8C8C8C; }
 
-.gameplay-input-pill.focused {
-  border: 4px solid #FFD456;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+
+.gameplay-accept,
+.gameplay-skip,
+.gameplay-leaf-button {
+  font-family: 'Fz Poppins', 'Poppins', Arial, sans-serif;
+  font-weight: 300;
 }
 
 .gameplay-accept {
   width: 200px;
   height: 44px;
-  background: #31C46A;
+  background: #FFD456;
   color: white;
   border: none;
   border-radius: 999px;
-  font-weight: 600;
   cursor: pointer;
 }
 
 .gameplay-skip {
   width: 200px;
   height: 44px;
-  background: #F37327;
-  color: white;
+  background: #FFFFFF;
+  color: #F37327;
+  box-shadow: none;
   border: none;
   border-radius: 999px;
-  font-weight: 600;
   cursor: pointer;
 }
 
@@ -116,8 +121,8 @@
 }
 
 .gameplay-leaf img {
-  width: 68px; /* twice as big */
-  height: 68px;
+  width: 128px; /* twice as big */
+  height: 128px;
   object-fit: contain;
 }
 
@@ -125,4 +130,36 @@
   font-size: 12px;
   color: #8C8C8C;
   margin-top: 6px;
+}
+
+.gameplay-leaf-button {
+  width: 200px;
+  height: 44px;
+  background: #4FC6E0; /* Same as accept for now, or choose another color */
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gameplay-leaf-button img {
+  width: 36px;
+  height: 36px;
+  box-shadow: none;
+  vertical-align: middle;
+  align-self: center;
+  margin-bottom: 5px;
+}
+
+.gameplay-leaf-button span {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
 }

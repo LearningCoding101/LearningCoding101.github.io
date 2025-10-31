@@ -26,7 +26,6 @@ function GamePlayModal({ isOpen, onClose, currentTeamName, onSubmit }) {
           <input
             className="gameplay-number-input"
             type="text"
-            placeholder="01"
             aria-label="Nhập số"
             value={value}
             onChange={(e) => setValue(e.target.value)}
@@ -38,6 +37,10 @@ function GamePlayModal({ isOpen, onClose, currentTeamName, onSubmit }) {
         <button className="gameplay-accept" onClick={handleAccept}>
           Nhận thử thách
         </button>
+        <button className="gameplay-leaf-button">
+          <img src={leafHat} className="gameplay-leaf" alt="leaf hat" />
+          <span>Nón lá hi vọng</span>
+        </button>
         <button
           className="gameplay-skip"
           onClick={() => {
@@ -46,12 +49,6 @@ function GamePlayModal({ isOpen, onClose, currentTeamName, onSubmit }) {
         >
           Bỏ qua
         </button>
-
-        <div className="gameplay-leaf">
-          <img src={leafHat} alt="leaf hat" />
-        </div>
-
-        <div className="gameplay-leaf-caption">Ô nón lá hy vọng</div>
       </div>
     </div>
   );

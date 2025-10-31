@@ -130,8 +130,8 @@
 }
 
 .dragon-text-image {
-  width: 85%;
-  max-width: 350px;
+  width: 170%;
+  max-width: 700px;
   height: auto;
   object-fit: contain;
   transition: all 0.4s ease-in-out;
@@ -219,7 +219,7 @@
   }
   
   .dragon-text-image {
-    max-width: 400px;
+    max-width: 800px;
   }
 }
 
@@ -261,8 +261,8 @@
 }
 
 .home-page.bottom-sheet-open .main-illustration {
-  top: 50px;
-  transform: translate(-50%, 0) scale(0.50);
+  top: 12.5%;
+  transform: translate(-50%, -30%) scale(0.60);
   transform-origin: center top;
 }
 
@@ -278,22 +278,15 @@
 
 /* when gameplay modal is open, move dragon left and hide radial blur */
 .home-page.game-modal-open .dragon-text-image {
-  transform: none;
-  max-width: 175px; /* roughly 50% smaller than 350 */
+  transform: scale(0.75);
+  max-width: 350px; /* roughly 50% smaller than 700 */
   width: auto;
-}
-
-/* when the bottom sheet is open and team2 is selected, make the dragon 50% bigger */
-.home-page.team2-selected .dragon-text-image {
-  transform: translate(-50%, -50%) scale(1.25);
-  max-width: 525px; /* 350 * 1.5 */
 }
 
 .home-page.game-modal-open .main-illustration {
-  top: 20px;
-  left: 18px;
-  transform: none;
-  width: auto;
+  top: 12.5%;
+  transform: translate(-75%, -50%) ;
+  transform-origin: center top;
 }
 
 .home-page.game-modal-open .radial-blur {
