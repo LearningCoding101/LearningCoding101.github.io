@@ -15,8 +15,8 @@ const questions = {
     id: 12,
     title: "TP. Hà Nội",
     prompt:
-      "Hà Nội có chong chóng\nCứ tự quay trong nhà\nKhông cần trời thổi gió\nKhông cần bạn chạy xa.\n…\n_____ có Hồ Gươm\nNước xanh như pha mực\nBên hồ ngọn Tháp Bút\nViết thơ lên trời cao.",
-    question: "Tên địa danh thích hợp ở chỗ trống là?",
+      "<b>Đọc to bài thơ sau cho mọi người cùng nghe</b><br><br>Hà Nội có chong chóng<br>Cứ tự quay trong nhà<br>Không cần trời thổi gió<br>Không cần bạn chạy xa.<br>…<br>_____ có Hồ Gươm<br>Nước xanh như pha mực<br>Bên hồ ngọn Tháp Bút<br>Viết thơ lên trời cao.<br><br>(Trần Đăng Khoa)",
+    question: "<b>Tên địa danh thích hợp ở chỗ trống là?</b>",
     choices: ["Vĩnh Long", "Hà Nội", "Ninh Thuận", "Long Khánh"],
     correctIndex: 1,
   },

@@ -94,9 +94,27 @@ export default function ReadAndChooseModal({
           </h2>
         )}
 
-        {prompt && <p className="read-choose-prompt">{prompt}</p>}
+        {prompt &&
+          (/<[a-z][\s\S]*>/i.test(prompt) ? (
+            <p
+              className="read-choose-prompt"
+              dangerouslySetInnerHTML={{ __html: prompt }}
+            />
+          ) : (
+            <p className="read-choose-prompt">{prompt}</p>
+          ))}
 
-        {question && <p className="read-choose-question">{question}</p>}
+        {question && (
+          <p
+            className="read-choose-question"
+            dangerouslySetInnerHTML={{
+              __html: question
+                .replace(/<bold>/g, "<b>")
+                .replace(/<\/bold>/g, "</b>")
+                .replace(/\n/g, "<br>"),
+            }}
+          />
+        )}
 
         <div
           role="list"
