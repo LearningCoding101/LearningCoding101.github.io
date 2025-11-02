@@ -101,7 +101,7 @@
   top: 180px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Fz Poppins', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.4em;
@@ -148,7 +148,7 @@
   border: none;
   border-radius: 159.4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Fz Poppins', sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.5em;
@@ -304,7 +304,7 @@
 }
 
 .turn-indicator .turn-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Fz Poppins', sans-serif;
   font-size: 14px;
   opacity: 0.9;
 }
