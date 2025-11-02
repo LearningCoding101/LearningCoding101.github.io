@@ -14,19 +14,50 @@
     <!-- Touch Icons -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
-    <!-- Font Preloading for faster mobile loading -->
-    <link rel="preload" href="/fonts/subset-FzPoppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="/fonts/subset-FzPoppins-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="/fonts/subset-FzPoppins-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    
     <!-- SEO Meta Tags -->
     <meta name="description" content="Mobile-first React application built with Vite" />
     <meta name="keywords" content="react, vite, mobile, pwa" />
     
     <title>Bong Capstone App</title>
-    <script type="module" crossorigin src="/assets/index-5mPtZPJ4.js"></script>
+    
+    <!-- Critical Font CSS - Inline for immediate mobile loading -->
+    <style>
+      @font-face {
+        font-family: 'Poppins';
+        src: url('/fonts/subset-FzPoppins-Regular.woff2') format('woff2'),
+             url('/fonts/subset-FzPoppins-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: 'Poppins';
+        src: url('/fonts/subset-FzPoppins-Medium.woff2') format('woff2'),
+             url('/fonts/subset-FzPoppins-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: 'Poppins';
+        src: url('/fonts/subset-FzPoppins-Bold.woff2') format('woff2'),
+             url('/fonts/subset-FzPoppins-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
+      }
+      body {
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+    </style>
+    
+    <!-- Font Preloading -->
+    <link rel="preload" href="/fonts/subset-FzPoppins-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/subset-FzPoppins-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/subset-FzPoppins-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <script type="module" crossorigin src="/assets/index-BkAalsXv.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/react-vendor-BQicp0N-.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-CVE3vK2v.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-DqiAtoqf.css">
   <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
   <body>
     <div id="root"></div>
