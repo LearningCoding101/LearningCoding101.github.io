@@ -32,7 +32,7 @@
 
 .read-choose-question {
   text-align: center;
-  font-family: 'Fz Poppins', 'Poppins', Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   font-weight: 700;
   margin-bottom: 16px;
   color: #404040;
@@ -40,7 +40,7 @@
 
 .read-choose-question b {
   font-weight: 700;
-  font-family: 'Fz Poppins', 'Poppins', Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
 }
 
 .read-choose-choices {

@@ -1,3 +1,6 @@
+/* Import base64 embedded fonts for mobile browsers */
+@import './fonts-base64.css';
+
 :root {
   --primary-color: #646cff;
   --primary-hover: #535bf2;
@@ -20,37 +23,36 @@
   --border-radius-lg: 12px;
 }
 
-/* Local Poppins (FZ Poppins) font faces - mapped to 'Poppins' so existing
-   styles using 'Poppins' pick them up. Vite will rewrite the URLs during
-   build; setting base './' in vite.config.js makes the built assets resolve
-   correctly on GitHub Pages. */
+/* Local Poppins (FZ Poppins) font faces - Additional weights
+   Using absolute paths from /public/fonts/ for reliable mobile browser loading.
+   Mobile-optimized: WOFF2 (best) with WOFF fallback, then TTF and EOT.
+   Absolute paths ensure fonts load correctly after Vite build on all devices. */
+
 @font-face {
   font-family: 'Poppins';
-  src: url('../assets/font/FzPoppins/FZ Poppins-Regular.ttf') format('truetype');
-  font-weight: 400;
+  src: url('/fonts/subset-FzPoppins-Light.woff2') format('woff2'),
+       url('/fonts/subset-FzPoppins-Light.woff') format('woff');
+  font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
+
 @font-face {
   font-family: 'Poppins';
-  src: url('../assets/font/FzPoppins/FZ Poppins-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/font/FzPoppins/FZ Poppins-SemiBold.ttf') format('truetype');
+  src: url('/fonts/subset-FzPoppins-SemiBold.woff2') format('woff2'),
+       url('/fonts/subset-FzPoppins-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
+
 @font-face {
   font-family: 'Poppins';
-  src: url('../assets/font/FzPoppins/FZ Poppins-Bold.ttf') format('truetype');
-  font-weight: 700;
+  src: url('/fonts/subset-FzPoppins-ExtraBold.woff2') format('woff2'),
+       url('/fonts/subset-FzPoppins-ExtraBold.woff') format('woff');
+  font-weight: 800;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 
@@ -77,9 +79,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-color);
