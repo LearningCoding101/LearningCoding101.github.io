@@ -18,7 +18,7 @@
     <meta name="description" content="Mobile-first React application built with Vite" />
     <meta name="keywords" content="react, vite, mobile, pwa" />
     
-    <!-- Font Preloading for Critical Weights - Mobile Optimized -->
+    <!-- Font Preloading for Critical Weights - Fixed Paths for GitHub Pages -->
     <link rel="preload" href="./assets/fz_poppins-regular-UBdfRsMD.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fz_poppins-medium-BdbNkCFZ.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fz_poppins-semibold-CRS8ranF.woff2" as="font" type="font/woff2" crossorigin>
@@ -81,8 +81,8 @@
         }
       }, 2000);
       
-      // Test font file accessibility
-      fetch('/src/assets/font/fz_poppins-regular.woff2')
+      // Test font file accessibility with correct path
+      fetch('./src/assets/font/fz_poppins-regular.woff2')
         .then(response => {
           console.log('📦 Font file status:', response.status, response.statusText);
           console.log('📏 Font file size:', response.headers.get('content-length'), 'bytes');
@@ -125,36 +125,60 @@
     <div id="root"></div>
     
     <script>
-      // Update debug indicator immediately
-      document.addEventListener('DOMContentLoaded', () => {
+      // Update debug indicator immediately and more frequently
+      let updateCount = 0;
+      
+      const updateDebugInfo = () => {
+        updateCount++;
         const indicator = document.getElementById('font-debug-indicator');
         const details = document.getElementById('debug-details');
         
-        // Check computed font style
-        const updateDebugInfo = () => {
+        if (!indicator || !details) return;
+        
+        try {
           const bodyFont = window.getComputedStyle(document.body).fontFamily;
           const hasFzPoppins = bodyFont.includes('Fz Poppins');
           
           indicator.style.background = hasFzPoppins ? '#44ff44' : '#ff4444';
           details.innerHTML = `
+            Update: ${updateCount}<br>
             Font: ${hasFzPoppins ? '✅ Fz Poppins' : '❌ System'}<br>
-            Full: ${bodyFont.substring(0, 30)}...
+            Full: ${bodyFont.substring(0, 25)}...
           `;
           
-          console.log('📊 Debug Update:', { bodyFont, hasFzPoppins });
-        };
-        
-        // Update immediately and every 2 seconds
-        updateDebugInfo();
-        const interval = setInterval(updateDebugInfo, 2000);
-        
-        // Stop checking after 20 seconds
-        setTimeout(() => clearInterval(interval), 20000);
-        
-        // Add click handler to hide/show
-        indicator.addEventListener('click', () => {
-          indicator.style.display = indicator.style.display === 'none' ? 'block' : 'none';
+          console.log(`📊 Debug Update ${updateCount}:`, { bodyFont, hasFzPoppins });
+          
+          if (hasFzPoppins) {
+            console.log('🎉 VISUAL DEBUG: Font successfully detected!');
+          }
+        } catch (error) {
+          console.error('Debug update error:', error);
+        }
+      };
+      
+      // Start updating immediately when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          console.log('📄 DOM Ready - Starting visual debug updates');
+          updateDebugInfo();
+          const interval = setInterval(updateDebugInfo, 1000); // Every 1 second
+          setTimeout(() => clearInterval(interval), 30000); // Stop after 30 seconds
         });
+      } else {
+        console.log('📄 DOM Already Ready - Starting visual debug updates');
+        updateDebugInfo();
+        const interval = setInterval(updateDebugInfo, 1000);
+        setTimeout(() => clearInterval(interval), 30000);
+      }
+      
+      // Add click handler when DOM is ready
+      document.addEventListener('DOMContentLoaded', () => {
+        const indicator = document.getElementById('font-debug-indicator');
+        if (indicator) {
+          indicator.addEventListener('click', () => {
+            indicator.style.display = indicator.style.display === 'none' ? 'block' : 'none';
+          });
+        }
       });
     </script>
   </body>
