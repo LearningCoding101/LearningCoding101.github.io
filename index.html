@@ -18,168 +18,19 @@
     <meta name="description" content="Mobile-first React application built with Vite" />
     <meta name="keywords" content="react, vite, mobile, pwa" />
     
-    <!-- Font Preloading for Critical Weights - Fixed Paths for GitHub Pages -->
-    <link rel="preload" href="./assets/fz_poppins-regular-UBdfRsMD.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./assets/fz_poppins-medium-BdbNkCFZ.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./assets/fz_poppins-semibold-CRS8ranF.woff2" as="font" type="font/woff2" crossorigin>
-    
-    <!-- IMMEDIATE Font Debugging Script for Mobile Testing -->
-    <script>
-      // Force immediate logging - should appear in chrome://inspect
-      console.log('🚀 FONT DEBUG START - Page Loading');
-      console.log('📱 Device Info:', {
-        userAgent: navigator.userAgent,
-        platform: navigator.platform,
-        viewport: window.innerWidth + 'x' + window.innerHeight,
-        cookieEnabled: navigator.cookieEnabled,
-        onLine: navigator.onLine
-      });
-      
-      // Check Font Loading API immediately
-      if ('fonts' in document) {
-        console.log('✅ Font Loading API IS SUPPORTED');
-        
-        // Listen for font events immediately
-        document.fonts.addEventListener('loading', (e) => {
-          console.log('🔄 FONT LOADING:', e.fontface.family, e.fontface.weight);
-        });
-        
-        document.fonts.addEventListener('loadingdone', (e) => {
-          console.log('✅ FONT LOADED:', e.fontface.family, e.fontface.weight);
-        });
-        
-        document.fonts.addEventListener('loadingerror', (e) => {
-          console.error('❌ FONT FAILED:', e.fontface.family, e.fontface.weight);
-        });
-        
-        document.fonts.ready.then(() => {
-          console.log('🎉 ALL FONTS READY');
-          console.log('🔤 Final font check:', document.fonts.check('16px Fz Poppins'));
-        });
-      } else {
-        console.log('❌ Font Loading API NOT SUPPORTED');
-      }
-      
-      // Test font availability every 2 seconds for first 10 seconds
-      let testCount = 0;
-      const testInterval = setInterval(() => {
-        testCount++;
-        
-        if (document.body) {
-          const computedFont = window.getComputedStyle(document.body).fontFamily;
-          console.log(`🔍 Test ${testCount} - Body font:`, computedFont);
-          
-          if (computedFont.includes('Fz Poppins')) {
-            console.log('🎯 SUCCESS: Fz Poppins detected!');
-            clearInterval(testInterval);
-          }
-        }
-        
-        if (testCount >= 5) {
-          console.log('⏰ Font test timeout after 10 seconds');
-          clearInterval(testInterval);
-        }
-      }, 2000);
-      
-      // Test font file accessibility with correct path
-      fetch('./src/assets/font/fz_poppins-regular.woff2')
-        .then(response => {
-          console.log('📦 Font file status:', response.status, response.statusText);
-          console.log('📏 Font file size:', response.headers.get('content-length'), 'bytes');
-        })
-        .catch(error => {
-          console.error('❌ Font file fetch failed:', error);
-        });
-        
-      console.log('🏁 FONT DEBUG SETUP COMPLETE');
-    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
     <!-- Fz Poppins fonts -->
     
     <title>Bong Capstone App</title>
-    <script type="module" crossorigin src="./assets/index-BleEg7uv.js"></script>
+    <script type="module" crossorigin src="./assets/index-Dycu0oRv.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/react-vendor-BQicp0N-.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-2lz3brGS.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-3j8u4MO9.css">
   <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
-    <!-- VISIBLE DEBUG INDICATOR -->
-    <div id="font-debug-indicator" style="
-      position: fixed;
-      top: 0;
-      right: 0;
-      background: #ff4444;
-      color: white;
-      padding: 10px;
-      z-index: 99999;
-      font-family: monospace;
-      font-size: 12px;
-      border-radius: 0 0 0 8px;
-      max-width: 200px;
-      word-wrap: break-word;
-    ">
-      🔍 FONT DEBUG<br>
-      Status: Loading...<br>
-      <span id="debug-details">Checking...</span>
-    </div>
-    
     <div id="root"></div>
-    
-    <script>
-      // Update debug indicator immediately and more frequently
-      let updateCount = 0;
-      
-      const updateDebugInfo = () => {
-        updateCount++;
-        const indicator = document.getElementById('font-debug-indicator');
-        const details = document.getElementById('debug-details');
-        
-        if (!indicator || !details) return;
-        
-        try {
-          const bodyFont = window.getComputedStyle(document.body).fontFamily;
-          const hasFzPoppins = bodyFont.includes('Fz Poppins');
-          
-          indicator.style.background = hasFzPoppins ? '#44ff44' : '#ff4444';
-          details.innerHTML = `
-            Update: ${updateCount}<br>
-            Font: ${hasFzPoppins ? '✅ Fz Poppins' : '❌ System'}<br>
-            Full: ${bodyFont.substring(0, 25)}...
-          `;
-          
-          console.log(`📊 Debug Update ${updateCount}:`, { bodyFont, hasFzPoppins });
-          
-          if (hasFzPoppins) {
-            console.log('🎉 VISUAL DEBUG: Font successfully detected!');
-          }
-        } catch (error) {
-          console.error('Debug update error:', error);
-        }
-      };
-      
-      // Start updating immediately when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-          console.log('📄 DOM Ready - Starting visual debug updates');
-          updateDebugInfo();
-          const interval = setInterval(updateDebugInfo, 1000); // Every 1 second
-          setTimeout(() => clearInterval(interval), 30000); // Stop after 30 seconds
-        });
-      } else {
-        console.log('📄 DOM Already Ready - Starting visual debug updates');
-        updateDebugInfo();
-        const interval = setInterval(updateDebugInfo, 1000);
-        setTimeout(() => clearInterval(interval), 30000);
-      }
-      
-      // Add click handler when DOM is ready
-      document.addEventListener('DOMContentLoaded', () => {
-        const indicator = document.getElementById('font-debug-indicator');
-        if (indicator) {
-          indicator.addEventListener('click', () => {
-            indicator.style.display = indicator.style.display === 'none' ? 'block' : 'none';
-          });
-        }
-      });
-    </script>
   </body>
 </html>
