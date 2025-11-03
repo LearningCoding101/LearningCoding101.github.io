@@ -1,5 +1,9 @@
 // Question data for ReadAndChooseAnswerWithImageModal
-// Image URLs are placeholders - update with actual images later
+// Images imported for proper Vite asset handling
+import dakLak24 from "../../assets/read_and_choose_image_modal/dak_lak_24.png";
+import khanhHoa25 from "../../assets/read_and_choose_image_modal/khanh_hoa_25.png";
+import tayNinh28 from "../../assets/read_and_choose_image_modal/tay_ninh_28.png";
+import hoChiMinh29 from "../../assets/read_and_choose_image_modal/ho_chi_minh_29.png";
 
 export const readAndChooseWithImageQuestions = {
   // Question 24: Đắk Lắk
@@ -9,7 +13,7 @@ export const readAndChooseWithImageQuestions = {
     prompt: "Xem các hình ảnh về tỉnh thành và nêu cảm nghĩ",
     question:
       "Đâu là các tính từ mô tả về cảnh quan ở Phú Yên (Tỉnh Đắk Lắk mới)?",
-    image: "placeholder-24-phuyenlandscape.jpg", // TODO: Replace with actual image
+    image: dakLak24,
     choices: [
       "Chật hẹp, oi ả",
       "Hối hả, sầm uất",
@@ -25,7 +29,7 @@ export const readAndChooseWithImageQuestions = {
     title: "Khánh Hòa (Ninh Thuận)",
     prompt: "Xem hình ảnh và trả lời",
     question: "Đây là loại trái cây gì?",
-    image: "placeholder-25-nhogreen.jpg", // TODO: Replace with actual image
+    image: khanhHoa25,
     choices: [
       "Bưởi Phúc Trạch (Tỉnh Hà Tĩnh)",
       "Mận Hà Nội",
@@ -41,7 +45,7 @@ export const readAndChooseWithImageQuestions = {
     title: "Tây Ninh",
     prompt: "Xem hình ảnh núi Bà",
     question: "Ở tỉnh Tây Ninh có một ngọn núi không trắng là ngọn núi Bà___?",
-    image: "placeholder-28-bađinh.jpg", // TODO: Replace with actual image
+    image: tayNinh28,
     choices: ["Vàng", "Cam", "Đen", "Đỏ"],
     correctIndex: 2, // "Đen" (Núi Bà Đen)
   },
@@ -53,7 +57,7 @@ export const readAndChooseWithImageQuestions = {
     prompt: "Về tên gọi của Thành phố Hồ Chí Minh",
     question:
       "Sau khi đất nước thống nhất, vì sao Sài Gòn được đổi tên thành Thành phố Hồ Chí Minh?",
-    image: "placeholder-29-hcm-city.jpg", // TODO: Replace with actual image
+    image: hoChiMinh29,
     choices: [
       "Chính sách thay đổi",
       "Tưởng nhớ Bác Hồ – vị lãnh tụ kính yêu của dân tộc Việt Nam",
