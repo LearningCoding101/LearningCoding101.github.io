@@ -4,6 +4,7 @@ import GamePlayModal from "./GamePlayModal";
 import * as Modals from "./modals";
 import { getReadAndChooseQuestion } from "./modals/readAndChooseQuestions";
 import { readAndChooseWithImageQuestions } from "./modals/readAndChooseWithImageQuestions";
+import { watchVideoAndChooseQuestions } from "./modals/watchVideoAndChooseQuestions";
 
 function DemoInner() {
   const { teamScores, currentTeam, answerQuestion, reset } = useGame();
@@ -33,7 +34,17 @@ function DemoInner() {
     // try convert to number and map
     const n = parseInt(val, 10);
 
-    // first check if this number corresponds to a ReadAndChooseAnswerWithImageModal question
+    // first check if this number corresponds to a WatchVideoAndChooseRightAnswerModal question
+    const videoQ = watchVideoAndChooseQuestions[n];
+    if (videoQ) {
+      setActiveModalKey("WatchVideoAndChooseRightAnswerModal");
+      setActiveQuestionData(videoQ);
+      setPlayOpen(false);
+      setQuestionOpen(true);
+      return;
+    }
+
+    // then check if this number corresponds to a ReadAndChooseAnswerWithImageModal question
     const imageQ = readAndChooseWithImageQuestions[n];
     if (imageQ) {
       setActiveModalKey("ReadAndChooseAnswerWithImageModal");

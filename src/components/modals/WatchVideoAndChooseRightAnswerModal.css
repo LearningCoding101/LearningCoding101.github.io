@@ -1,0 +1,235 @@
+/* Styles for WatchVideoAndChooseRightAnswerModal */
+.watch-video-choose-root .gameplay-sheet {
+  max-width: 720px;
+  width: calc(100% - 48px);
+  margin: 0 auto;
+  padding: 28px 24px;
+  box-sizing: border-box;
+  border-radius: 24px 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Challenge logo at top */
+.watch-video-choose-logo-container {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.watch-video-choose-logo {
+  width: 96px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Video display section */
+.watch-video-choose-wrapper {
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  border-radius: 16px;
+  position: relative;
+}
+
+.watch-video-choose-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Hide fullscreen and menu buttons from video controls */
+.watch-video-choose-video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+
+.watch-video-choose-video::-moz-media-controls-fullscreen-button {
+  display: none;
+}
+
+.watch-video-choose-video::-webkit-media-controls-panel {
+  --webkit-media-controls-fullscreen-button-display: none;
+}
+
+/* Hide the menu button (three dots) */
+.watch-video-choose-video::-webkit-media-controls-overflow-menu-button {
+  display: none;
+}
+
+.watch-video-choose-video::-moz-media-controls-overflow-menu-button {
+  display: none;
+}
+
+/* Video playing indicator */
+.watch-video-choose-status {
+  text-align: center;
+  font-size: 14px;
+  color: #ff7a00;
+  margin-bottom: 12px;
+  font-weight: 500;
+  min-height: 20px;
+}
+
+/* Title */
+.watch-video-choose-title {
+  color: #ff7a00;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+/* Prompt text */
+.watch-video-choose-root .watch-video-choose-prompt {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #404040;
+  white-space: pre-wrap;
+}
+
+/* Question text */
+.watch-video-choose-root .watch-video-choose-question {
+  text-align: center;
+  font-family: 'Fz Poppins', Arial, sans-serif;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #404040;
+}
+
+.watch-video-choose-root .watch-video-choose-question b {
+  font-weight: 700;
+  font-family: 'Fz Poppins', Arial, sans-serif;
+}
+
+/* Choice buttons */
+.watch-video-choose-root .watch-video-choose-choices {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.watch-video-choose-root .watch-video-choose-choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 16px 20px;
+  border-radius: 24px;
+  background: #F2F2F7;
+  color: #8C8C8C;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+  transition: background 150ms ease, color 150ms ease, transform 80ms ease;
+  box-shadow: none !important;
+  border: none;
+}
+
+.watch-video-choose-root .watch-video-choose-choice:hover:not(.disabled):not(.video-playing) {
+  transform: translateY(-2px);
+  background: #ff7a00;
+  color: white;
+}
+
+.watch-video-choose-root .watch-video-choose-choice.video-playing {
+  background: #d3d3d3;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.watch-video-choose-root .watch-video-choose-choice.selected {
+  background: #ff7a00;
+  color: white;
+  border: 1px solid #ff7a00;
+}
+
+.watch-video-choose-root .watch-video-choose-choice.correct {
+  background: #ff7a00;
+  color: white;
+  border: 1px solid #ff7a00;
+}
+
+.watch-video-choose-root .watch-video-choose-choice.wrong {
+  background: #e04a3f;
+  color: white;
+  border: 1px solid #e04a3f;
+}
+
+/* Control buttons */
+.watch-video-choose-root .watch-video-choose-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+
+.watch-video-choose-root .watch-video-choose-confirm {
+  padding: 10px 20px;
+  border-radius: 28px;
+  border: none;
+  background: #ffd24d;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.watch-video-choose-root .watch-video-choose-confirm:hover:not(.disabled) {
+  background: #ffca1a;
+}
+
+.watch-video-choose-root .watch-video-choose-confirm.disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .watch-video-choose-root .gameplay-sheet {
+    padding: 20px 16px;
+  }
+
+  .watch-video-choose-logo {
+    width: 80px;
+  }
+
+  .watch-video-choose-wrapper {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+
+  .watch-video-choose-root .watch-video-choose-choice {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .watch-video-choose-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .watch-video-choose-root .gameplay-sheet {
+    padding: 16px 12px;
+  }
+
+  .watch-video-choose-wrapper {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 16px;
+  }
+
+  .watch-video-choose-root .watch-video-choose-choice {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
