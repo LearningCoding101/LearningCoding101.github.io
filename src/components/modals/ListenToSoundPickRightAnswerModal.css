@@ -1,0 +1,269 @@
+/* Styles for ListenToSoundPickRightAnswerModal */
+.listen-sound-choose-root .gameplay-sheet {
+  max-width: 720px;
+  width: calc(100% - 48px);
+  margin: 0 auto;
+  padding: 28px 24px;
+  box-sizing: border-box;
+  border-radius: 24px 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Challenge logo at top */
+.listen-sound-choose-logo-container {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.listen-sound-choose-logo {
+  width: 96px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Audio display section */
+.listen-sound-choose-wrapper {
+  width: 100%;
+  max-width: 640px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.listen-sound-choose-audio {
+  width: 100%;
+  height: 50px;
+  border-radius: 5000px;
+  background-color: #F66B00; /* orange background for the control "cell" */
+  accent-color: #F66B00; /* progress/seek accent where supported */
+  color: #ffffff; /* attempt to set text/icon color */
+  /* Ensure the element itself doesn't get dimmed by filters elsewhere */
+  -webkit-filter: none;
+  filter: none;
+}
+
+/* WebKit: colorize control icons to white and keep panel orange */
+.listen-sound-choose-audio::-webkit-media-controls-panel {
+  background-color: #F66B00;
+}
+
+/* Target common WebKit control parts and force icons to render as white using filters */
+.listen-sound-choose-audio::-webkit-media-controls-play-button,
+.listen-sound-choose-audio::-webkit-media-controls-mute-button,
+.listen-sound-choose-audio::-webkit-media-controls-rewind-button,
+.listen-sound-choose-audio::-webkit-media-controls-seek-back-button,
+.listen-sound-choose-audio::-webkit-media-controls-seek-forward-button,
+.listen-sound-choose-audio::-webkit-media-controls-timeline,
+.listen-sound-choose-audio::-webkit-media-controls-current-time-display,
+.listen-sound-choose-audio::-webkit-media-controls-time-remaining-display,
+.listen-sound-choose-audio::-webkit-media-controls-volume-slider {
+  /* invert/darken then brighten to make dark glyphs appear white */
+  filter: invert(1) brightness(2) contrast(1);
+  color: #ffffff;
+}
+
+/* Some browsers use SVG icons that can pick up this color */
+.listen-sound-choose-audio::-webkit-media-controls-enclosure {
+  color: #ffffff;
+}
+
+/* Firefox: attempt to colorize controls where possible */
+.listen-sound-choose-audio {
+  /* For Firefox native controls, set color and use appearance tweaks */
+  color: #ffffff;
+}
+
+.listen-sound-choose-audio::-moz-range-progress {
+  background-color: #ffffff;
+}
+
+.listen-sound-choose-audio::-moz-range-thumb {
+  background-color: #ffffff;
+  border: none;
+}
+
+/* Hide fullscreen/menu buttons where available */
+.listen-sound-choose-audio::-webkit-media-controls-fullscreen-button,
+.listen-sound-choose-audio::-webkit-media-controls-overflow-menu-button,
+.listen-sound-choose-audio::-moz-media-controls-overflow-menu-button {
+  display: none;
+}
+
+/* Hide the menu button (three dots) */
+.listen-sound-choose-audio::-webkit-media-controls-overflow-menu-button {
+  display: none;
+}
+
+.listen-sound-choose-audio::-moz-media-controls-overflow-menu-button {
+  display: none;
+}
+
+/* Title */
+.listen-sound-choose-title {
+  color: #ff7a00;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+/* Prompt text */
+.listen-sound-choose-root .listen-sound-choose-prompt {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #404040;
+  white-space: pre-wrap;
+}
+
+/* Question text */
+.listen-sound-choose-root .listen-sound-choose-question {
+  text-align: center;
+  font-family: 'Fz Poppins', Arial, sans-serif;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #404040;
+}
+
+.listen-sound-choose-root .listen-sound-choose-question b {
+  font-weight: 700;
+  font-family: 'Fz Poppins', Arial, sans-serif;
+}
+
+/* Choice buttons */
+.listen-sound-choose-root .listen-sound-choose-choices {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.listen-sound-choose-root .listen-sound-choose-choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 16px 20px;
+  border-radius: 24px;
+  background: #F2F2F7;
+  color: #8C8C8C;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+  transition: background 150ms ease, color 150ms ease, transform 80ms ease;
+  box-shadow: none !important;
+  border: none;
+}
+
+.listen-sound-choose-root .listen-sound-choose-choice:hover:not(.disabled) {
+  transform: translateY(-2px);
+  background: #ff7a00;
+  color: white;
+}
+
+.listen-sound-choose-root .listen-sound-choose-choice.selected {
+  background: #ff7a00;
+  color: white;
+  border: 1px solid #ff7a00;
+}
+
+.listen-sound-choose-root .listen-sound-choose-choice.correct {
+  background: #ff7a00;
+  color: white;
+  border: 1px solid #ff7a00;
+}
+
+.listen-sound-choose-root .listen-sound-choose-choice.wrong {
+  background: #e04a3f;
+  color: white;
+  border: 1px solid #e04a3f;
+}
+
+.listen-sound-choose-root .listen-sound-choose-choice.audio-playing {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Control buttons */
+.listen-sound-choose-root .listen-sound-choose-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+
+.listen-sound-choose-root .listen-sound-choose-confirm {
+  padding: 10px 20px;
+  border-radius: 28px;
+  border: none;
+  background: #ffd24d;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.listen-sound-choose-root .listen-sound-choose-confirm:hover:not(.disabled) {
+  background: #ffca1a;
+}
+
+.listen-sound-choose-root .listen-sound-choose-confirm.disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .listen-sound-choose-root .gameplay-sheet {
+    padding: 20px 16px;
+  }
+
+  .listen-sound-choose-logo {
+    width: 80px;
+  }
+
+  .listen-sound-choose-wrapper {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .listen-sound-choose-audio {
+    height: 45px;
+  }
+
+  .listen-sound-choose-root .listen-sound-choose-choice {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .listen-sound-choose-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .listen-sound-choose-root .gameplay-sheet {
+    padding: 16px 12px;
+  }
+
+  .listen-sound-choose-wrapper {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .listen-sound-choose-audio {
+    height: 40px;
+  }
+
+  .listen-sound-choose-root .listen-sound-choose-choice {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}

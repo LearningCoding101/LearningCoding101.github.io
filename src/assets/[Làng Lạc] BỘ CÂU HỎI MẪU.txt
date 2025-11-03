@@ -252,9 +252,9 @@ Chủ tịch Hồ Chí Minh, Phan Bội Châu, Phan Đình Phùng, Lê Hồng Ph
 Hãy nối ảnh và tên của các danh nhân: (Thêm hình)
 
 
-18. Hà Tĩnh
-Giọng hà tĩnh | bài thơ tiếng nghệ#1 | Vân Giọng Miền Trung (audio cut: 0:15 - 0:27)
-🤯 Thử Thách: Cá quả được người Hà Tĩnh gọi là?
+18. Hà Tĩnh [listenToSoundPickRightANswerModal]
+Nghe đoạn âm thanh sau và trả lời câu hỏi\n
+Cá quả được người Hà Tĩnh gọi là?
 1. Cá lóc
 2. Cá chuối
 3. Cá tràu

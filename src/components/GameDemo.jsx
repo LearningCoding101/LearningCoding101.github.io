@@ -5,6 +5,7 @@ import * as Modals from "./modals";
 import { getReadAndChooseQuestion } from "./modals/readAndChooseQuestions";
 import { readAndChooseWithImageQuestions } from "./modals/readAndChooseWithImageQuestions";
 import { watchVideoAndChooseQuestions } from "./modals/watchVideoAndChooseQuestions";
+import { listenToSoundQuestions } from "./modals/listenToSoundQuestions";
 
 function DemoInner() {
   const { teamScores, currentTeam, answerQuestion, reset } = useGame();
@@ -39,6 +40,16 @@ function DemoInner() {
     if (videoQ) {
       setActiveModalKey("WatchVideoAndChooseRightAnswerModal");
       setActiveQuestionData(videoQ);
+      setPlayOpen(false);
+      setQuestionOpen(true);
+      return;
+    }
+
+    // then check if this number corresponds to a ListenToSoundPickRightAnswerModal question
+    const soundQ = listenToSoundQuestions[n];
+    if (soundQ) {
+      setActiveModalKey("ListenToSoundPickRightAnswerModal");
+      setActiveQuestionData(soundQ);
       setPlayOpen(false);
       setQuestionOpen(true);
       return;
