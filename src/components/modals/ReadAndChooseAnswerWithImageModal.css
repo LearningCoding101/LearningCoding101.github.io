@@ -1,0 +1,190 @@
+/* Styles for ReadAndChooseAnswerWithImageModal */
+.read-choose-image-root .gameplay-sheet {
+  max-width: 720px;
+  width: calc(100% - 48px);
+  margin: 0 auto;
+  padding: 28px 24px;
+  box-sizing: border-box;
+  border-radius: 24px 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Challenge logo at top */
+.read-choose-image-logo-container {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.read-choose-image-logo {
+  width: 96px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Image display section */
+.read-choose-image-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.read-choose-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Title */
+.read-choose-image-title {
+  color: #ff7a00;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+/* Prompt text */
+.read-choose-image-root .read-choose-prompt {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #404040;
+  white-space: pre-wrap;
+}
+
+/* Question text */
+.read-choose-image-root .read-choose-question {
+  text-align: center;
+  font-family: 'Fz Poppins', Arial, sans-serif;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #404040;
+}
+
+.read-choose-image-root .read-choose-question b {
+  font-weight: 700;
+  font-family: 'Fz Poppins', Arial, sans-serif;
+}
+
+/* Choice buttons - inherited from ReadAndChooseModal */
+.read-choose-image-root .read-choose-choices {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.read-choose-image-root .read-choose-choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 16px 20px;
+  border-radius: 24px;
+  background: #ffffff;
+  color: #404040;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+  transition: background 150ms ease, color 150ms ease, transform 80ms ease;
+  box-shadow: none !important;
+  border: none;
+}
+
+.read-choose-image-root .read-choose-choice:hover:not(.disabled) {
+  transform: translateY(-2px);
+  background: #ff7a00;
+  color: white;
+}
+
+.read-choose-image-root .read-choose-choice.selected {
+  background: #ff7a00;
+  color: white;
+  border: 1px solid #ff7a00;
+}
+
+.read-choose-image-root .read-choose-choice.correct {
+  background: #ff7a00;
+  color: white;
+  border: 1px solid #ff7a00;
+}
+
+.read-choose-image-root .read-choose-choice.wrong {
+  background: #e04a3f;
+  color: white;
+  border: 1px solid #e04a3f;
+}
+
+/* Control buttons */
+.read-choose-image-root .read-choose-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+
+.read-choose-image-root .read-choose-confirm {
+  padding: 10px 20px;
+  border-radius: 28px;
+  border: none;
+  background: #ffd24d;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.read-choose-image-root .read-choose-confirm:hover:not(.disabled) {
+  background: #ffca1a;
+}
+
+.read-choose-image-root .read-choose-confirm.disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .read-choose-image-root .gameplay-sheet {
+    padding: 20px 16px;
+  }
+
+  .read-choose-image-logo {
+    width: 80px;
+  }
+
+  .read-choose-image {
+    max-width: 100%;
+  }
+
+  .read-choose-image-root .read-choose-choice {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .read-choose-image-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .read-choose-image-root .gameplay-sheet {
+    padding: 16px 12px;
+  }
+
+  .read-choose-image-wrapper {
+    margin-bottom: 16px;
+  }
+
+  .read-choose-image-root .read-choose-choice {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}

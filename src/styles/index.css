@@ -1,5 +1,6 @@
-/* Import Fz Poppins fonts from assets */
+/* Import fonts from assets */
 @import '../assets/font/FzPoppins/Fz Poppins.css';
+@import '../assets/font/hello-roti/Hello-Roti.css';
 
 :root {
   --primary-color: #646cff;
